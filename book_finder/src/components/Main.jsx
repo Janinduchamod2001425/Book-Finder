@@ -352,6 +352,7 @@ export default function Main() {
           bookData.length > 0 ? (
             <Card book={bookData} />
           ) : (
+            // If user search something not exists, display NoResults
             <NoResults />
           )
         ) : null}
