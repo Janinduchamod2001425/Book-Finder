@@ -38,5 +38,5 @@ Book Finder is a modern web application built using **React** and **Vite**, desi
 Make sure to set up your **Google Books API Key** in your environment variables:
 
 ```
-VITE_API_KEY=your_google_books_api_key
+Google_Book_API_KEY=google_books_api_key
 ```
