@@ -1,5 +1,7 @@
 # 📚 Book Finder
 
+<img src="https://go-skill-icons.vercel.app/api/icons?i=react,vite,javascript,tailwind,googlecloud" />
+
 Book Finder is a modern web application built using **React** and **Vite**, designed to help users discover and explore books effortlessly. Leveraging the **Google Books API**, this application offers a seamless interface for searching, viewing, and learning more about books.
 
 ## 🚀 Tech Stack
