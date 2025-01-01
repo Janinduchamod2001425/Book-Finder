@@ -74,6 +74,7 @@ export default function Card({ book }) {
       </div>
 
       {/* More Details Modal */}
+      {/* More Details Modal */}
       {selectedBook && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white rounded-lg shadow-lg p-8 w-3/4 md:w-1/2">
@@ -86,37 +87,52 @@ export default function Card({ book }) {
             </button>
 
             {/* Modal Content */}
-            <div className="flex flex-col items-center">
-              <img
-                alt={selectedBook.title || "Book Thumbnail"}
-                src={
-                  selectedBook.imageLinks?.thumbnail ||
-                  selectedBook.imageLinks?.smallThumbnail ||
-                  noCover
-                }
-                className="h-48 w-32 object-cover mb-4"
-              />
-              <h2 className="text-xl font-bold mb-2">{selectedBook.title}</h2>
-              <p className="text-sm text-gray-600 mb-4">
-                <strong>Author(s):</strong>{" "}
-                {selectedBook.authors?.join(", ") || "Unknown"}
-              </p>
-              <p className="text-sm text-gray-600 mb-4">
-                <strong>Publisher:</strong> {selectedBook.publisher || "N/A"}
-              </p>
-              <p className="text-sm text-gray-600 mb-4">
-                <strong>Published Date:</strong>{" "}
-                {selectedBook.publishedDate || "N/A"}
-              </p>
-              <p className="text-sm text-gray-600 mb-4">
+            <div className="flex flex-col md:flex-row gap-6">
+              {/* Image Section */}
+              <div className="flex-shrink-0">
+                <img
+                  alt={selectedBook.title || "Book Thumbnail"}
+                  src={
+                    selectedBook.imageLinks?.thumbnail ||
+                    selectedBook.imageLinks?.smallThumbnail ||
+                    noCover
+                  }
+                  className="h-48 w-32 object-cover rounded-md"
+                />
+              </div>
+
+              {/* Details Section */}
+              <div className="flex-1">
+                <h2 className="text-xl font-bold mb-2">{selectedBook.title}</h2>
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Author(s):</strong>{" "}
+                  {selectedBook.authors?.join(", ") || "Unknown"}
+                </p>
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Publisher:</strong> {selectedBook.publisher || "N/A"}
+                </p>
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Published Date:</strong>{" "}
+                  {selectedBook.publishedDate || "N/A"}
+                </p>
+              </div>
+            </div>
+
+            {/* Description Section */}
+            <div className="mt-6">
+              <p className="text-sm text-gray-600">
                 <strong>Description:</strong>{" "}
                 {selectedBook.description || "No description available."}
               </p>
+            </div>
+
+            {/* More Info Button */}
+            <div className="mt-6 text-center">
               <a
                 href={selectedBook.infoLink || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-block px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-500 transition-all"
+                className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-500 transition-all"
               >
                 More Info
               </a>

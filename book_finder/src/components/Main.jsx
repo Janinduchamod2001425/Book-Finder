@@ -214,32 +214,32 @@ export default function Main() {
               {/* Dynamic Categories */}
               {[
                 {
-                  name: "Fiction",
+                  name: "Sports",
                   bgColor: "bg-purple-200",
                   textColor: "text-purple-800",
                 },
                 {
-                  name: "Science",
+                  name: "Cooking",
                   bgColor: "bg-green-200",
                   textColor: "text-green-800",
                 },
                 {
-                  name: "History",
+                  name: "Tech",
                   bgColor: "bg-blue-200",
                   textColor: "text-blue-800",
                 },
                 {
-                  name: "Biography",
+                  name: "Science",
                   bgColor: "bg-yellow-200",
                   textColor: "text-yellow-800",
                 },
                 {
-                  name: "Mystery",
+                  name: "Romance",
                   bgColor: "bg-red-200",
                   textColor: "text-red-800",
                 },
                 {
-                  name: "Romance",
+                  name: "History",
                   bgColor: "bg-pink-200",
                   textColor: "text-pink-800",
                 },
@@ -249,34 +249,34 @@ export default function Main() {
                   textColor: "text-indigo-800",
                 },
                 {
-                  name: "Adventure",
+                  name: "Fitness",
                   bgColor: "bg-teal-200",
                   textColor: "text-teal-800",
                 },
                 {
-                  name: "Horror",
+                  name: "Self-Help",
                   bgColor: "bg-gray-300",
                   textColor: "text-gray-800",
                 },
                 {
-                  name: "Self-Help",
+                  name: "Biography",
                   bgColor: "bg-orange-200",
                   textColor: "text-orange-800",
                 },
                 {
-                  name: "Poetry",
+                  name: "Travel",
                   bgColor: "bg-cyan-200",
                   textColor: "text-cyan-800",
                 },
                 {
-                  name: "Classics",
+                  name: "Mystery",
                   bgColor: "bg-emerald-200",
                   textColor: "text-emerald-800",
                 },
               ].map((category, index) => (
                 <div
                   key={index}
-                  className={`rounded-full p-3 ${category.bgColor} shadow-md text-center`}
+                  className={`rounded-full p-3 ${category.bgColor} shadow-md text-center cursor-pointer hover:shadow-lg hover:scale-105 transition-transform duration-200`}
                   onClick={() => handleCategorySearch(category.name)}
                 >
                   <h3 className={`text-sm font-medium ${category.textColor}`}>
