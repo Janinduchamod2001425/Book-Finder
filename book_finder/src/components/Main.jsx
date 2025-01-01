@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { FaSearch } from "react-icons/fa";
@@ -11,6 +12,7 @@ import Loading from "./Loading";
 
 import Logo from "../images/Book.png";
 
+// 3D Model of the Book
 import Spline from "@splinetool/react-spline";
 
 export default function Main() {
@@ -21,6 +23,7 @@ export default function Main() {
   const [hasSearched, setHasSearched] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // Search on Enter Key Press
   const searchBook = (e) => {
     if (e.key === "Enter") {
       handleSearch();
@@ -85,19 +88,22 @@ export default function Main() {
                 {/* Logo */}
                 <img alt="" src={Logo} className="h-10 w-auto" />
               </a>
+
+              {/* Title */}
               <p className="ml-2 font-bold sm:text-lg">
                 {" "}
                 <span className="sm:text-3xl text-3xl">B</span>ook Finder
               </p>
             </div>
           </div>
+
+          {/* Profile */}
           <div className="flex lg:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
             >
-              <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="size-6" />
             </button>
           </div>
@@ -136,7 +142,7 @@ export default function Main() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
               >
-                <span className="sr-only">Close menu</span>
+                {/* Close the menu */}
                 <XMarkIcon aria-hidden="true" className="size-6" />
               </button>
             </div>
@@ -178,9 +184,12 @@ export default function Main() {
         <div className="mx-auto max-w-7xl flex flex-col-reverse md:flex-row items-center py-32 sm:py-48 lg:py-56 md:mt-[-80px]">
           {/* Hero Content */}
           <div className="text-center md:text-left md:w-1/2">
+            {/* Main Title */}
             <h1 className="text-balance text-5xl font-arboria font-extraBold tracking-tight text-gray-900 sm:text-7xl">
               Discover Your Next Favourite Book
             </h1>
+
+            {/* Sub Title */}
             <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
               Explore a world of stories, knowledge, and inspiration. <br />
               Find books that ignite your curiosity and fuel your imagination.
@@ -287,7 +296,7 @@ export default function Main() {
             </div>
           </div>
 
-          {/* Spline 3D Model */}
+          {/* Spline 3D Model of the Book*/}
           <div className="w-1/2 h-[680px] hidden sm:block mt-[-80px] ml-20">
             <Spline
               scene="https://prod.spline.design/RD6H3cg-Ld2vg8Ze/scene.splinecode"
@@ -337,8 +346,8 @@ export default function Main() {
         </div>
       )}
 
+      {/* Search Results */}
       <div>
-        {/* Search Results */}
         {!loading && hasSearched ? (
           bookData.length > 0 ? (
             <Card book={bookData} />
@@ -346,9 +355,6 @@ export default function Main() {
             <NoResults />
           )
         ) : null}
-
-        {/* Loading State */}
-        {loading && <Loading />}
       </div>
     </div>
   );
