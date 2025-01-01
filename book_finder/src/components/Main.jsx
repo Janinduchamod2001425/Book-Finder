@@ -353,9 +353,3 @@ export default function Main() {
     </div>
   );
 }
-
-// ### create vite app
-
-// ```bash
-// npm create vite@latest book_finder
-// ```
