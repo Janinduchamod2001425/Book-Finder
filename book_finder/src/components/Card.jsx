@@ -74,7 +74,6 @@ export default function Card({ book }) {
       </div>
 
       {/* More Details Modal */}
-      {/* More Details Modal */}
       {selectedBook && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white rounded-lg shadow-lg p-8 w-3/4 md:w-1/2">
